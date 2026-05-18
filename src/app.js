@@ -4,7 +4,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
-
+import authRoutes from "./routes/auth.routes.js";
 dotenv.config();
 const app = express();
 
@@ -20,5 +20,5 @@ app.get("/", (req, res) => {
     message: "NexCart API Running",
   });
 });
-
+app.use("/api/auth", authRoutes);
 export default app;
